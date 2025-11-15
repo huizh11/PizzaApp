@@ -1,0 +1,268 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto+Mono:ital,wght@0,300;0,400;0,500;1,300&display=swap');
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html {
+  font-size: 62.5%;
+}
+
+body {
+  font-family: 'Roboto Mono', monospace;
+  color: #252525;
+  font-weight: 400;
+  background: linear-gradient(to bottom, #f7f2e9 0%, #fff9e6 100%);
+  min-height: 100vh;
+  padding: 3.2rem 2rem 6rem;
+  border-bottom: 1.6rem solid #edc84b;
+  transition: background 0.5s ease;
+}
+
+.container {
+  max-width: 85rem;
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 4.8rem;
+}
+
+/* header */
+.header {
+  align-self: stretch;
+}
+
+.header h1 {
+  color: #d793ff; 
+  text-transform: uppercase;
+  text-align: center;
+  font-size: 5.2rem;
+  font-weight: 300;
+  letter-spacing: 3px;
+
+/* outline */
+  text-shadow: 
+    -2px -2px 0 #000,  
+     2px -2px 0 #000,  
+    -2px  2px 0 #000,  
+     2px  2px 0 #000;
+}
+
+.header h1::before,
+.header h1::after {
+  display: block;
+  content: '';
+  height: 3px;
+  width: 12rem;
+  background-color: #edc84b;
+  position: absolute;
+  top: 50%;
+}
+
+.header h1::before { left: -14rem; }
+.header h1::after { right: -14rem; }
+
+.tagline {
+  font-style: italic;
+  font-size: 2rem;
+  color: #fff8d6;
+  margin-top: 0.8rem;
+  text-shadow: 1px 1px 2px rgba(0,0,0,0.4);
+}
+
+/* Menu */
+.menu {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 3.5rem;
+  width: 100%;
+}
+
+.menu h2 {
+  display: inline-block;
+  padding: 1rem 0;
+  border-top: 2px solid currentColor;
+  border-bottom: 2px solid currentColor;
+  font-size: 2.8rem;
+  text-transform: uppercase;
+  letter-spacing: 3px;
+  font-weight: 500;
+  color: #e63946;
+}
+
+.menu > p {
+  font-size: 1.6rem;
+  text-align: center;
+  line-height: 1.6;
+  width: 80%;
+  max-width: 60rem;
+  color: #555;
+}
+
+.pizzas {
+  list-style: none;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(24rem, 1fr));
+  gap: 4.8rem;
+  width: 100%;
+}
+
+/* styling of each pizza items */
+.pizza {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  gap: 1.6rem;
+  padding: 2rem;
+  border-radius: 12px;
+  background: #fff;
+  border: 2px solid #da4bed;
+  box-shadow: 0 8px 16px rgba(0,0,0,0.1);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.pizza:hover {
+  transform: translateY(-12px) scale(1.03);
+  box-shadow: 0 12px 24px rgba(0,0,0,0.2);
+}
+
+.pizza img {
+  width: 14rem;
+  height: 14rem;
+  object-fit: cover;
+  border-radius: 50%;
+  border: 2px solid #edc84b;
+  transition: transform 0.3s ease;
+}
+
+.pizza img:hover {
+  transform: scale(1.05);
+}
+
+.pizza h3 {
+  font-size: 2.2rem;
+  font-weight: 500;
+  color: #e63946;
+}
+
+.pizza p {
+  font-size: 1.4rem;
+  font-weight: 300;
+  font-style: italic;
+  color: #555;
+}
+
+.pizza span {
+  font-size: 1.6rem;
+  font-weight: 500;
+  color: #2a9d8f;
+}
+
+.pizza.sold-out {
+  color: #888;
+}
+
+.pizza.sold-out img {
+  filter: grayscale(100%);
+  opacity: 0.6;
+}
+
+/* footer */
+.footer {
+  font-size: 1.4rem;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 2rem;
+  padding-top: 2rem;
+  border-top: 2px solid #e63946;
+}
+
+.order {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 1.6rem;
+}
+
+.btn {
+  font-family: inherit;
+  border: none;
+  font-size: 1.6rem;
+  font-weight: 500;
+  background-color: #edc84b;
+  padding: 1.4rem 3.2rem;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: all 0.25s ease;
+}
+
+.btn:hover {
+  background-color: #e9bb24;
+  transform: scale(1.05);
+}
+
+
+@media (max-width: 768px) {
+  .pizza img {
+    width: 12rem;
+    height: 12rem;
+  }
+
+  .pizza h3 {
+    font-size: 1.8rem;
+  }
+
+  .menu h2 {
+    font-size: 2.2rem;
+  }
+}
+
+/* adjust to screensize */
+@media (max-width: 480px) {
+  .container {
+    padding: 2rem 1rem 4rem;
+  }
+
+  .pizza img {
+    width: 10rem;
+    height: 10rem;
+  }
+
+  .pizza h3 {
+    font-size: 1.6rem;
+  }
+}
+
+.no-results {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100px; 
+    font-size: 2.0rem;
+}
+
+.clear-btn {
+  background: linear-gradient(135deg, #ffc4c4, #e5adff); /* cute pink-orange gradient */
+  border: none;
+  padding: 12px 25px;
+  border-radius: 25px; 
+  font-size: 1.3rem;
+  font-weight: 600;
+  cursor: pointer;
+  color: black;
+  display: block;
+  margin: 20px auto; 
+  transition: transform 0.2s, box-shadow 0.2s;
+}
+
+.clear-btn:hover {
+  transform: translateY(-3px); 
+  box-shadow: 0 6px 12px rgba(0,0,0,0.2);
+}
